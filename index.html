@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>For You ♥</title>
+  <meta name="description" content="Something I made just for you." />
+  <meta name="theme-color" content="#1c1216" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ SECTION 1 · THE GATE ═══════════════ -->
+  <div id="gate" class="gate" aria-hidden="false">
+    <canvas id="gateCanvas" class="gate__canvas"></canvas>
+    <div class="gate__content">
+      <p class="gate__kicker">a little something</p>
+      <h1 class="gate__hey">Hey, <span data-nickname></span>…</h1>
+      <p class="gate__line" id="gateLine">I made something for you.</p>
+      <button id="openBtn" class="btn btn--heart" type="button">Open your surprise&nbsp;&nbsp;♥</button>
+      <p class="gate__hint">best with sound on, when you're ready</p>
+    </div>
+  </div>
+
+  <div id="reveal" class="reveal" aria-hidden="true">
+    <div class="reveal__burst" aria-hidden="true"></div>
+    <p class="reveal__name">for <span data-nickname></span></p>
+  </div>
+
+  <!-- ═══════════════ THE JOURNEY ═══════════════ -->
+  <main id="journey" class="journey" aria-hidden="true">
+
+    <!-- noise + atmosphere -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <!-- ═════════ SECTION 2 · HERO ═════════ -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" class="hero__canvas"></canvas>
+      <div class="hero__inner wrap">
+        <p class="hero__date reveal-item" data-today-date></p>
+        <h1 class="hero__title reveal-item">
+          Happy Birthday,<br /><em data-her></em>&nbsp;♥
+        </h1>
+        <p class="hero__sub reveal-item">Today is about you.</p>
+
+        <div class="hero__divider reveal-item" aria-hidden="true"><i></i><span>♥</span><i></i></div>
+
+        <p class="hero__days reveal-item" id="dayCounter" hidden></p>
+
+        <a class="scrollcue reveal-item" href="#letter" data-scroll>
+          There's something I want to show you
+          <span class="scrollcue__arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 3 · LETTER ═════════ -->
+    <section class="letter section" id="letter">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">chapter one</p>
+          <h2>To my favorite person…</h2>
+        </header>
+
+        <article class="letter__card reveal-item" id="letterCard">
+          <div class="letter__top" aria-hidden="true"><span></span><b>♥</b></div>
+          <div class="letter__body" id="letterBody"><!-- typed by app.js --></div>
+          <div class="letter__sign" id="letterSign" hidden>
+            <span>With love,</span>
+            <b data-me></b>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 4 · TIMELINE ═════════ -->
+    <section class="story section" id="story">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">chapter two</p>
+          <h2>Our little story</h2>
+        </header>
+        <ol class="timeline" id="timeline"><!-- items injected by app.js --></ol>
+      </div>
+      <p class="story__quote reveal-item" id="storyQuote"></p>
+    </section>
+
+    <!-- ═════════ SECTION 5 · GALLERY ═════════ -->
+    <section class="gallery section" id="gallery">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">chapter three</p>
+          <h2>Some moments I'll always keep</h2>
+        </header>
+        <div class="grid" id="grid"><!-- tiles injected by app.js --></div>
+        <p class="gallery__hint reveal-item">tap a photo to see it up close</p>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 6 · THINGS I LOVE ═════════ -->
+    <section class="loves section" id="loves">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">chapter four</p>
+          <h2>Things I love about you</h2>
+        </header>
+        <div class="loves__grid" id="lovesGrid"><!-- cards injected by app.js --></div>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 7 · THE SECRET ═════════ -->
+    <section class="secret section" id="secret">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">one more thing</p>
+          <h2>There's one more thing…</h2>
+        </header>
+        <div class="secret__stage reveal-item">
+          <button id="secretBtn" class="btn btn--ghost" type="button">Don't click this&nbsp;👀</button>
+          <div class="secret__reveal" id="secretReveal" hidden>
+            <p class="secret__tease" id="secretTease"></p>
+            <p class="secret__big" id="secretBig"></p>
+            <p class="secret__big secret__big--2" id="secretBig2"></p>
+            <div class="secret__hearts" id="secretHearts" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 8 · MUSIC ═════════ -->
+    <section class="music section" id="music">
+      <div class="wrap">
+        <header class="section__head reveal-item">
+          <p class="kicker">chapter five</p>
+          <h2>One song that reminds me of you</h2>
+        </header>
+        <div class="player reveal-item" id="player">
+          <div class="player__disc" aria-hidden="true"><b>♥</b></div>
+          <div class="player__meta">
+            <p class="player__song" data-song></p>
+            <p class="player__artist">press play — I'll be right here</p>
+          </div>
+          <button id="playBtn" class="player__btn" type="button" aria-label="Play song" aria-pressed="false">
+            <span class="player__icon player__icon--play">▶</span>
+            <span class="player__icon player__icon--pause">❙❙</span>
+          </button>
+          <div class="player__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <p class="music__note reveal-item" id="musicNote" hidden></p>
+      </div>
+    </section>
+
+    <!-- ═════════ SECTION 9 · FINALE ═════════ -->
+    <section class="finale section" id="finale">
+      <canvas id="finaleCanvas" class="finale__canvas"></canvas>
+      <div class="finale__inner wrap">
+        <p class="finale__kicker reveal-item">and so, once more…</p>
+        <h2 class="finale__title reveal-item">Happy Birthday,<br /><em data-her></em></h2>
+        <div class="finale__lines">
+          <p class="finale__line reveal-item" data-final-0></p>
+          <p class="finale__line reveal-item" data-final-1></p>
+        </div>
+        <p class="finale__sign reveal-item">— <span data-me></span>&nbsp;♥</p>
+        <p class="finale__made reveal-item" data-footer></p>
+      </div>
+      <footer class="footer">♥</footer>
+    </section>
+  </main>
+
+  <!-- ═══════════════ LIGHTBOX ═══════════════ -->
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Photo">
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__frame"><img id="lbImg" alt="" /></div>
+      <figcaption class="lightbox__cap">
+        <p class="lightbox__title" id="lbTitle"></p>
+        <p class="lightbox__date" id="lbDate"></p>
+        <p class="lightbox__note" id="lbNote"></p>
+      </figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Next photo">›</button>
+  </div>
+
+  <audio id="song" src="audio/song.mp3" preload="metadata"></audio>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
